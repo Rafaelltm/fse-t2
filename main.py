@@ -1,12 +1,13 @@
 from comms.Uart import Uart
-import utils.constants as Constants
 from utils.Pid import PID
-import struct
 from comms.I2C import I2C
 from Forno import Forno
-import time
 from threading import Thread
 from utils.log import Logger
+
+import utils.constants as Constants
+import struct
+import time
 import datetime
 
 class Main():
@@ -32,16 +33,12 @@ class Main():
             time.sleep(2)
             if self.state == Constants.LIGAR_SISTEMA: #COMANDO 161
                 self.sys_on()
-
             elif self.state == Constants.DESLIGAR_SISTEMA: #COMANDO 162
                 self.sys_off()
-                    
             elif self.state == Constants.LIGAR_FORNO: #COMANDO 163
                 self.forno_on()
-
             elif self.state == Constants.DESLIGAR_FORNO: #COMANDO 164
                 self.forno_off()
-
             else:
                 pass 
 

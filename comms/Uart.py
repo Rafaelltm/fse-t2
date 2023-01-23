@@ -1,7 +1,7 @@
+from utils.Crc import calcula_CRC
+
 import serial
 import time
-
-from utils.Crc import calcula_CRC
 
 class Uart:
     IS_CONNECTED = True 
@@ -18,7 +18,6 @@ class Uart:
         else:
             self.IS_CONNECTED = True
             print("Erro na conexão UART")
-
 
     def write(self, message, size):
         if (self.IS_CONNECTED):

@@ -8,7 +8,7 @@ class I2C:
     def __init__(self):
        pass
 
-    def le_temperatura_da_sala(self):
+    def le_room_temp(self):
         bus = smbus2.SMBus(self.PORTA)
 
         calibragem = bme280.load_calibration_params(bus, self.ENDERECO)
